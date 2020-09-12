@@ -183,7 +183,7 @@ export default {
       headers: 'pedidoModule/headers',
       listaPedidos: 'pedidoModule/listaTabla',
       actions: 'pedidoModule/actions',
-      listaDomicilios: 'domicilioModule/lista',
+      listaDomicilios: 'domicilioModule/listaSimple',
       menu: 'menuModule/listaSinple',
       loadinPedidoFormComponent: 'loadinPedidoFormComponent',
       loadinDomicilioComponent: 'loadinDomicilioComponent',
