@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import store from '../store/index'
 import VueSocketio from 'vue-socket.io'
-import { urlApiApp } from '../config'
+import { urlApiSocket } from '../config'
 
 export function StartSocketClient (namespace) {
   Vue.use(new VueSocketio({
     debug: true,
-    connection: urlApiApp + namespace,
+    connection: urlApiSocket + namespace,
     vuex: {
       store,
       actionPrefix: 'SOCKET_',
