@@ -16,29 +16,29 @@
             </thead>
             <tbody>
                 <tr v-for="plato in reporte.platos" :key="plato._id">
-                <td>{{ plato.nombre }}</td>
-                <td>{{ plato.cantidad }}</td>
-                <td>{{ formatoMoneda(plato.total) }}</td>
+                <td><font size="1">{{ plato.nombre }}</font></td>
+                <td><font size="1">{{ plato.cantidad }}</font></td>
+                <td><font size="1">{{ formatoMoneda(plato.total) }}</font></td>
                 </tr>
                 <tr v-if="reporte.descuentos !== 0" >
-                <td>Descuentos</td>
+                <td><font size="1">Descuentos</font></td>
                 <td></td>
-                <td>{{ reporte.descuentos }}</td>
+                <td><font size="1">{{ reporte.descuentos }}</font></td>
                 </tr>
                 <tr v-if="reporte.subtotalVenta !== 0" >
-                <td>SubTotal</td>
+                <td><font size="1">SubTotal</font></td>
                 <td></td>
-                <td>{{ reporte.subtotalVenta }}</td>
+                <td><font size="1">{{ reporte.subtotalVenta }}</font></td>
                 </tr>
                 <tr v-if="reporte.totalDomicilio !== 0" >
-                <td>Domicilio</td>
+                <td><font size="1">Domicilio</font></td>
                 <td></td>
-                <td>{{ reporte.totalDomicilio }}</td>
+                <td><font size="1">{{ reporte.totalDomicilio }}</font></td>
                 </tr>
                 <tr>
-                <td>Total</td>
+                <td><font size="1">Total</font></td>
                 <td></td>
-                <td>{{ reporte.totalVendido }}</td>
+                <td><font size="1">{{ reporte.totalVendido }}</font></td>
                 </tr>
             </tbody>
             </template>

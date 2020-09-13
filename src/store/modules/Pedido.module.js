@@ -17,6 +17,11 @@ export const pedidoModule = {
       { index: 1, name: 'imprimir', icon: 'mdi-printer' },
       { index: 2, name: 'eliminar', icon: 'mdi-delete' }
     ],
+    encabezadoTablaImpresion: [
+      { text: 'Descripcion', value: 'nombre' },
+      { text: 'Cant', value: 'cantidad' },
+      { text: 'Total', value: 'total' }
+    ],
     listaPedidos: [],
     selectedPedido: {}
   },
@@ -37,6 +42,7 @@ export const pedidoModule = {
         }
       })
     },
+    encabezadoTablaImpresion: state => state.encabezadoTablaImpresion,
     ObtenerPedido: state => state.selectedPedido,
     headers: state => state.encabezadoTabla,
     actions: state => state.actions
