@@ -60,15 +60,20 @@ export const reporteModule = {
     select ({ commit }, id) {
       commit('setSelectedReporte', id)
     },
-    generarReporte ({ commit, rootState }) {
+    generarReporte ({ commit, rootState, rootCo }) {
       peticiones.generar('reporte', rootState.businessInformation.name + '/generar/' + false)
         .then(respuesta => {
           console.log(respuesta)
-          if (respuesta.ok) commit('setReporte', respuesta.reporte)
-          else {
+          if (respuesta.ok) {
+            commit('setReporte', respuesta.reporte)
+            if (window.innerWidth < 960) commit('changeimprimirReporteDialog', false, { root: true })
+          } else {
             peticiones.generar('reporte', rootState.businessInformation.name + '/generar/' + confirm(respuesta.mensaje))
               .then(respuesta => {
-                if (respuesta.ok) commit('setReporte', respuesta.reporte)
+                if (respuesta.ok) {
+                  commit('setReporte', respuesta.reporte)
+                  if (window.innerWidth < 960) commit('changeimprimirReporteDialog', false, { root: true })
+                }
               })
           }
         })

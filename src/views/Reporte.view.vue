@@ -84,7 +84,7 @@ export default {
       generarReporte: 'reporteModule/generarReporte'
     }),
     seleccionarReporte (reporte) {
-      if (window.innerWidth < 1280) { this.$store.dispatch('changeimprimirReporteDialog') }
+      if (window.innerWidth < 960) { this.$store.dispatch('changeimprimirReporteDialog') }
       this.select(reporte.id)
     },
     generar () {

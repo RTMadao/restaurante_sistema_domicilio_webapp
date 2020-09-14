@@ -4,7 +4,7 @@
       <v-col cols="12" md="8">
         <v-card class="ma-0 ma-md-3">
         <v-card-title class="pt-3">
-          <h2 class="d-none d-md-inline mt-3">Menu</h2>
+          <h2 class="d-none d-md-inline mt-3">Domicilio</h2>
           <v-spacer></v-spacer>
           <v-text-field
             solo
@@ -53,7 +53,7 @@
         <v-card class="ma-3">
         <v-card-title>
         <v-spacer></v-spacer>
-        Nuevo Plato
+        Nuevo Barrio
         <v-spacer></v-spacer>
         </v-card-title>
         <v-card-actions>
@@ -66,7 +66,7 @@
           prefix="$"
           type="number"
           v-model="nuevoBarrio.valor"
-          label="Precio"
+          label="Valor"
           ></v-text-field>
           <v-row class="my-5">
             <v-spacer></v-spacer>
