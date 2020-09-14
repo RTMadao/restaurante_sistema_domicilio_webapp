@@ -104,7 +104,7 @@
             <v-row class="mt-5">
             <v-spacer></v-spacer>
             <v-btn class="mr-12"
-            @click="submit">Guardar</v-btn>
+            @click="submit" color="primary">Guardar</v-btn>
             <v-btn @click="clear">Cancelar</v-btn>
             <v-spacer></v-spacer>
             </v-row>
@@ -159,12 +159,11 @@ export default {
       headers: 'pedidoModule/headers',
       listaPedidos: 'pedidoModule/listaTabla',
       actions: 'pedidoModule/actions',
-      listaDomicilios: 'domicilioModule/lista',
-      menu: 'menuModule/lista',
+      listaDomicilios: 'domicilioModule/listaSimple',
+      menu: 'menuModule/listaSimple',
       loadinPedidoFormComponent: 'loadinPedidoFormComponent',
       loadinDomicilioComponent: 'loadinDomicilioComponent',
-      loadinMenuComponent: 'loadinMenuComponent',
-      formularioPedidoMovilDialogIsVisible: 'formularioPedidoMovilDialogIsVisible'
+      loadinMenuComponent: 'loadinMenuComponent'
     }),
     totalNuevoPedido: function () {
       return new Intl.NumberFormat('es-co', { currency: 'COP' }).format(parseInt(this.nuevoPedido.pedido.valorDomicilio) + parseInt(this.nuevoPedido.pedido.subtotal) + parseInt(this.nuevoPedido.pedido.descuento))

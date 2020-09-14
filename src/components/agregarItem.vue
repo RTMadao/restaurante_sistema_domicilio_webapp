@@ -1,6 +1,7 @@
 <template>
     <v-dialog
       v-model="agregarItemDialogIsVisible"
+      persistent
       max-width="300"
     >
       <v-card>
@@ -26,7 +27,6 @@
 
           <v-btn
             color="primary"
-            text
             @click="guardar(itemType)"
           >
             Guardar

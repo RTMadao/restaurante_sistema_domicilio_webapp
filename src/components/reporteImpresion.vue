@@ -53,7 +53,6 @@
             <v-btn
             bottom
             color="primary"
-            text
             v-print=" 'printReporte' "
             @click="close"
             >

@@ -1,5 +1,5 @@
 <template>
-    <v-card :height="altura" class="ma-3" :loading="loadinPedidoFormComponent" >
+    <v-card class="ma-3" :loading="loadinPedidoFormComponent" >
         <v-card-title>
         <v-spacer></v-spacer>
         Nuevo Pedido
@@ -127,7 +127,7 @@
             <v-row class="mt-5">
             <v-spacer></v-spacer>
             <v-btn class="mr-12"
-            @click="submit">Guardar</v-btn>
+            @click="submit" color="primary">Guardar</v-btn>
             <v-btn @click="clear">Cancelar</v-btn>
             <v-spacer></v-spacer>
             </v-row>
@@ -184,7 +184,7 @@ export default {
       listaPedidos: 'pedidoModule/listaTabla',
       actions: 'pedidoModule/actions',
       listaDomicilios: 'domicilioModule/listaSimple',
-      menu: 'menuModule/listaSinple',
+      menu: 'menuModule/listaSimple',
       loadinPedidoFormComponent: 'loadinPedidoFormComponent',
       loadinDomicilioComponent: 'loadinDomicilioComponent',
       loadinMenuComponent: 'loadinMenuComponent'

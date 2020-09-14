@@ -26,7 +26,7 @@
                 ></v-text-field>
                 <v-spacer></v-spacer>
                 <div class="d-flex px-4 mt-4">
-                    <v-btn class="mr-4" @click="submit">Ingresar</v-btn>
+                    <v-btn class="mr-4" color="primary" @click="submit">Ingresar</v-btn>
                     <v-btn @click="clear">Cancelar</v-btn>
                 </div>
             </form>

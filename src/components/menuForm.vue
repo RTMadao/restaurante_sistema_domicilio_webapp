@@ -1,6 +1,7 @@
 <template>
     <v-dialog
       v-model="menuFormDialogIsVisible"
+      persistent
       max-width="300"
     >
     <v-card class="pa-3">
@@ -24,7 +25,7 @@
           <v-row class="my-5">
             <v-spacer></v-spacer>
             <v-btn class="mr-12"
-            @click="submit">Guardar</v-btn>
+            @click="submit" color="primary">Guardar</v-btn>
             <v-btn @click="clear">Cancelar</v-btn>
             <v-spacer></v-spacer>
           </v-row>
@@ -72,13 +73,12 @@ export default {
       this.clear()
     },
     clear () {
-      this.estaModificando = false
       this.nuevoPolato = {
         nombre: '',
         precio: ''
       }
+      if (this.estaModificando) this.changeEstaModificando()
       this.$store.dispatch('changeMenuFormDialog')
-      this.changeEstaModificando()
     }
   }
 }

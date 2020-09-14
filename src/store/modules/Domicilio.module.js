@@ -51,7 +51,6 @@ export const domicilioModule = {
       peticiones.registrar(nuevoBarrio, rootState.businessInformation.name, 'domicilio')
         .then(response => {
           commit('setDomicilioComponentLoading', false, { root: true })
-          alert('Guardado exitosamente')
         })
         .catch(err => {
           commit('setDomicilioComponentLoading', false, { root: true })
@@ -70,7 +69,6 @@ export const domicilioModule = {
       peticiones.modificar('domicilio', rootState.businessInformation.name, nuevoBarrio.id, nuevoBarrio)
         .then(response => {
           commit('setDomicilioComponentLoading', false, { root: true })
-          alert('Guardado exitosamente')
         })
         .catch(err => {
           commit('setDomicilioComponentLoading', false, { root: true })

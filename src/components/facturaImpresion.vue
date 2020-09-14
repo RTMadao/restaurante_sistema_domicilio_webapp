@@ -6,50 +6,51 @@
       max-height="600"
     >
       <v-card height="600">
-        <div id="printFactura">
-        <h4 class="headline alineacion pt-3">RESTAURANTE<br>{{nombreRestaurante}}</h4>
-        <h6 class="alineacion">FACTURA DE VENTA</h6>
-        <h6 class="alineacion">FACTURA Nº {{factura.pedido.consecutivo}}</h6>
-        <h6 class="alineacion">{{formatofecha(factura.pedido.fechaHora)}}</h6>
+        <div id="printFactura" class="factura">
+        <h4 class="alineacion pt-3">RESTAURANTE<br>{{nombreRestaurante}}</h4>
+        <h5 class="alineacion mt-3">FACTURA DE VENTA</h5>
+        <h5 class="alineacion">FACTURA Nº {{factura.pedido.consecutivo}}</h5>
+        <h5 class="alineacion">{{formatofecha(factura.pedido.fechaHora)}}</h5>
 
-        <h6 v-if="factura.cliente.nombre !== ''" class="alineacion mt-3">Cliente: {{factura.cliente.nombre}}</h6>
-        <h6 v-if="factura.cliente.direccion !== '.'" class="alineacion">Direccion: {{factura.cliente.direccion}}</h6>
-        <h6 v-if="factura.cliente.telefono !== ''" class="alineacion">Telefono: {{factura.cliente.telefono}}</h6>
+        <h5 v-if="factura.cliente.nombre !== ''" class="alineacion mt-3">Cliente: {{factura.cliente.nombre}}</h5>
+        <h5 v-if="factura.cliente.direccion !== '.'" class="alineacion">Direccion: {{factura.cliente.direccion}}</h5>
+        <h5 v-if="factura.cliente.telefono !== ''" class="alineacion">Telefono: {{factura.cliente.telefono}}</h5>
+
         <v-simple-table dense class="mt-5 px-2">
             <template v-slot:default>
             <thead>
                 <tr>
-                <th class="text-left"><font size="1">Descripcion</font></th>
-                <th class="text-left"><font size="1">Cant</font></th>
-                <th class="text-left"><font size="1">Total</font></th>
+                <th class="text-left producto"><font size="2">Descripcion</font></th>
+                <th class="text-left cantidad"><font size="2">Cant</font></th>
+                <th class="text-left precio"><font size="2">Total</font></th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="plato in factura.pedido.platos" :key="plato._id">
-                <td><font size="1">{{ plato.nombre }}</font></td>
-                <td><font size="1">{{ plato.cantidad }}</font></td>
-                <td><font size="1">{{ formatoMoneda(plato.total) }}</font></td>
+                <td><font size="2">{{ plato.nombre }}</font></td>
+                <td><font size="2">{{ plato.cantidad }}</font></td>
+                <td><font size="2">{{ formatoMoneda(plato.total) }}</font></td>
                 </tr>
                 <tr v-if="factura.pedido.valorDomicilio !== 0" >
-                <td><font size="1">Domicilio</font></td>
+                <td><font size="2">Domicilio</font></td>
                 <td></td>
-                <td><font size="1">{{ formatoMoneda(factura.pedido.valorDomicilio) }}</font></td>
+                <td><font size="2">{{ formatoMoneda(factura.pedido.valorDomicilio) }}</font></td>
                 </tr>
                 <tr v-if="factura.pedido.descuento !== 0" >
-                <td><font size="1">Descuemto</font></td>
+                <td><font size="2">Descuemto</font></td>
                 <td></td>
-                <td><font size="1">{{ formatoMoneda(factura.pedido.descuento) }}</font></td>
+                <td><font size="2">{{ formatoMoneda(factura.pedido.descuento) }}</font></td>
                 </tr>
                 <tr>
-                <td><font size="1">Total</font></td>
+                <td><font size="2">Total</font></td>
                 <td></td>
-                <td><font size="1">{{ formatoMoneda(factura.pedido.total) }}</font></td>
+                <td><font size="2">{{ formatoMoneda(factura.pedido.total) }}</font></td>
                 </tr>
             </tbody>
             </template>
         </v-simple-table>
-        <h6 class="alineacion mt-5">GRACIAS POR SU COMPRA</h6>
-        <h6 class="alineacion">DOCUMENTO EQUIVALENTE</h6>
+        <h5 class="alineacion mt-5">GRACIAS POR SU COMPRA</h5>
+        <h5 class="alineacion">DOCUMENTO EQUIVALENTE</h5>
         </div>
 
         <v-card-actions absolute botton>
@@ -59,9 +60,8 @@
           bottom
           left
           absolute
-          color="primary"
-          text
           v-print=" 'printFactura' "
+          color="primary"
           @click="imprimir"
           >
             Imprimir
@@ -71,8 +71,8 @@
           bottom
           right
           absolute
-          color="primary"
           text
+          color="primary"
           @click="close"
           >
             Cancelar
@@ -134,5 +134,51 @@ export default {
 }
 .alineacion {
     text-align: center;
+    align-content: center;
 }
+.factura{
+    font-size: 17px;
+    font-family: 'Times New Roman';
+    width: 300px;
+    max-width: 300px;
+}
+td,
+th,
+tr,
+table {
+    border-collapse: collapse;
+    border-spacing: 1px 1px;
+    padding: 0%;
+}
+
+h6{
+    margin: 0px;
+    padding: 0px;
+}
+
+td.producto,
+th.producto {
+    width: 160px;
+    max-width: 160px;
+}
+
+td.cantidad,
+th.cantidad {
+    width: 60px;
+    max-width: 60px;
+    word-break: break-all;
+}
+
+td.precio,
+th.precio {
+    width: 80px;
+    max-width: 80px;
+    word-break: break-all;
+}
+
+.centrado {
+    text-align: center;
+    align-content: center;
+}
+
 </style>

@@ -24,7 +24,7 @@ export const menuModule = {
         precio: '$' + new Intl.NumberFormat('es-co', { currency: 'COP' }).format(plato.precio)
       }
     }),
-    listaSinple: state => state.menu,
+    listaSimple: state => state.menu,
     headers: state => state.encabezadoTabla,
     actions: state => state.actions,
     platoSeleccionado: state => state.platoSeleccionado,
@@ -51,7 +51,6 @@ export const menuModule = {
       peticiones.registrar(nuevoPlato, rootState.businessInformation.name, 'menu')
         .then(response => {
           commit('setMenuComponentLoading', false, { root: true })
-          alert('Guardado exitosamente')
         })
         .catch(err => {
           commit('setMenuComponentLoading', false, { root: true })
@@ -70,7 +69,6 @@ export const menuModule = {
       peticiones.modificar('menu', rootState.businessInformation.name, nuevoPlato.id, nuevoPlato)
         .then(response => {
           commit('setMenuComponentLoading', false, { root: true })
-          alert('Guardado exitosamente')
         })
         .catch(err => {
           commit('setMenuComponentLoading', false, { root: true })

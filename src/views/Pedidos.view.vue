@@ -30,7 +30,6 @@ export default {
   },
   computed: {
     ...mapGetters({
-      formularioPedidoMovilDialogIsVisible: 'formularioPedidoMovilDialogIsVisible'
     })
   },
   methods: {

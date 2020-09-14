@@ -50,19 +50,19 @@ export const actions = {
     context.commit('clearLogin')
   },
   changeAgregarItemDialog (context) {
-    context.commit('changeAgregarItemDialog')
+    setTimeout(() => { context.commit('changeAgregarItemDialog') }, 500)
   },
   changeImprimirFacturaDialog (context) {
-    context.commit('changeImprimirFacturaDialog')
+    setTimeout(() => { context.commit('changeImprimirFacturaDialog') }, 500)
   },
   changeimprimirReporteDialog (context) {
-    context.commit('changeimprimirReporteDialog')
+    setTimeout(() => { context.commit('changeimprimirReporteDialog') }, 500)
   },
   changeDomicilioFormDialog (context) {
-    context.commit('changeDomicilioFormDialog')
+    setTimeout(() => { context.commit('changeDomicilioFormDialog') }, 500)
   },
   changeMenuFormDialog (context) {
-    context.commit('changeMenuFormDialog')
+    setTimeout(() => { context.commit('changeMenuFormDialog') }, 500)
   },
   guardarNuevoPedido ({ commit, state }, nuevoPedido) {
     commit('setPedidoFormComponentLoading', true)
@@ -74,11 +74,9 @@ export const actions = {
     peticiones.registrar(nuevoPedido, state.businessInformation.name, 'pedido')
       .then(response => {
         commit('setPedidoFormComponentLoading', false)
-        alert('Pedido Guardado exitosamente')
       })
       .catch(err => {
         commit('setPedidoFormComponentLoading', false)
-        alert('Ocurrio un error al intentar guardar el pedido')
         console.log(err)
       })
   }

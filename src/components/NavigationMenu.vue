@@ -135,7 +135,7 @@ export default {
       return this.$route.name
     },
     esPaginaPedido: function () {
-      return window.innerWidth < 1280 && (this.$route.name === 'Pedido' || this.$route.name === 'Menu' || this.$route.name === 'Domicilio')
+      return window.innerWidth < 960 && (this.$route.name === 'Pedido' || this.$route.name === 'Menu' || this.$route.name === 'Domicilio')
     }
   },
   methods: {

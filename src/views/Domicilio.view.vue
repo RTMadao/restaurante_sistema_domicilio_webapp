@@ -71,7 +71,7 @@
           <v-row class="my-5">
             <v-spacer></v-spacer>
             <v-btn class="mr-12"
-            @click="submit">Guardar</v-btn>
+            @click="submit" color="primary">Guardar</v-btn>
             <v-btn @click="clear">Cancelar</v-btn>
             <v-spacer></v-spacer>
           </v-row>

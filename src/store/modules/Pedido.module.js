@@ -64,7 +64,6 @@ export const pedidoModule = {
 
       peticiones.eliminar('pedido', rootState.businessInformation.name, (id === undefined) ? '' : '/' + id)
         .then(response => {
-          console.log(response)
           commit('setPedidoTableComponentLoading', false, { root: true })
         })
         .catch(err => {
@@ -83,7 +82,6 @@ export const pedidoModule = {
 
       peticiones.modificar('pedido', rootState.businessInformation.name, id, state.selectedPedido)
         .then(response => {
-          console.log(response)
         })
         .catch(err => {
           alert('Ocurrio un error al intentar eliminar')
