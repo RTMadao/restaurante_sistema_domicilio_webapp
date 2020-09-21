@@ -59,7 +59,7 @@
                     </v-list-item-content>
 
                     <v-list-item-icon>
-                    <v-btn @click="eliminarPlato(nuevoPedido.pedido.platos.indexOf(item), plato.total)" fab x-small elevation="0">
+                    <v-btn @click="eliminarPlato(nuevoPedido.pedido.platos.indexOf(item), item.total)" fab x-small elevation="0">
                         <v-icon>mdi-close-circle</v-icon>
                     </v-btn>
                     </v-list-item-icon>

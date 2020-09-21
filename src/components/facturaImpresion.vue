@@ -141,6 +141,8 @@ export default {
     font-family: 'Times New Roman';
     width: 300px;
     max-width: 300px;
+    margin: auto;
+    margin-bottom: 100px;
 }
 td,
 th,
