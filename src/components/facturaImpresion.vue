@@ -138,7 +138,7 @@ export default {
     align-content: center;
 }
 .factura{
-    font-size: 17px;
+    font-size: 20px;
     font-family: 'Times New Roman';
     width: 300px;
     max-width: 300px;
