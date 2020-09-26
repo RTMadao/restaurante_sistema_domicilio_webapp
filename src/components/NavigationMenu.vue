@@ -13,7 +13,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-tabs v-model="pageActive" v-if="showMenu" right class="d-none d-md-inline">
+      <v-tabs v-model="pageActive" v-if="showMenu" right class="d-none d-md-inline" optional>
         <v-tab
         v-for="menuOption in menuDesktop"
         :key="menuOption.title"
@@ -107,8 +107,9 @@ export default {
   watch: {
     '$route.name' (name) {
       if (name === 'login') this.showMenu = false
-      else if (name === 'Nuevo Pedido') {
+      else if (name === 'Nuevo Pedido' || name === 'Configuracion') {
         this.showMenu = true
+        this.pageActive = -1
         this.$store.dispatch('getDataUser')
       } else {
         this.showMenu = true
@@ -158,6 +159,7 @@ export default {
           this.$router.replace('/reporte')
           break
         case 'goConfiguraciones':
+          this.$router.replace('/configuracion')
           break
       }
     },

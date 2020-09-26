@@ -6,6 +6,7 @@ import { pedidoModule } from './modules/Pedido.module'
 import { menuModule } from './modules/Menu.module'
 import { domicilioModule } from './modules/Domicilio.module'
 import { reporteModule } from './modules/Reporte.module'
+import { configuracionModule } from './modules/Configuracion.module'
 
 Vue.use(Vuex)
 
@@ -59,6 +60,7 @@ export default new Vuex.Store({
     pedidoModule,
     menuModule,
     domicilioModule,
-    reporteModule
+    reporteModule,
+    configuracionModule
   }
 })

@@ -51,5 +51,6 @@ export const mutations = {
     state.menuModule.menu = data.menu
     state.domicilioModule.listaDomicilios = data.domicilios
     state.reporteModule.listaReportes = data.reportes
+    state.configuracionModule.configuracion = data.configuracion
   }
 }
